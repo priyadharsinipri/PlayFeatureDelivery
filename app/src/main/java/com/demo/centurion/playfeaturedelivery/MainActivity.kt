@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             this
         )
     }
-   private val listener = SplitInstallStateUpdatedListener { state ->
+    private val listener = SplitInstallStateUpdatedListener { state ->
         when (state.status()) {
             SplitInstallSessionStatus.DOWNLOADING -> {
                 binding.progressIndicator.visibility = View.VISIBLE
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 ).show()
             }
             SplitInstallSessionStatus.INSTALLED -> {
-                if(binding.progressIndicator.visibility == View.VISIBLE) {
+                if (binding.progressIndicator.visibility == View.VISIBLE) {
                     binding.progressIndicator.visibility = View.GONE
                     Toast.makeText(
                         applicationContext,
@@ -72,7 +72,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.dogsCard.setOnClickListener {
             val intent = Intent()
-            intent.setClassName(BuildConfig.APPLICATION_ID, "com.demo.centurion.issues.DogsActivity")
+            intent.setClassName(
+                BuildConfig.APPLICATION_ID,
+                "com.demo.centurion.issues.DogsActivity"
+            )
             startActivity(intent)
         }
 
@@ -89,22 +92,36 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupModulesDownload() {
-        if (splitInstallManager.installedModules.contains(INSPECTIONS_MODULE) == false) {
-            binding.catsCard.findViewById<TextView>(R.id.issueTv).text =
-                "Not Installed Inspections Module"
+        if (splitInstallManager.installedModules.contains(ISSUES_MODULE) == false) {
+            binding.dogsCard.findViewById<TextView>(R.id.title).text =
+                "Uninstalled Issues Module"
         } else {
-            binding.catsCard.findViewById<TextView>(R.id.issueTv).text =
-                "Installed Inspections Module"
+            binding.dogsCard.findViewById<TextView>(R.id.title).text =
+                "Installed Issues Module"
         }
 
         val catsModuleInstallRequest = SplitInstallRequest.newBuilder()
             .addModule(INSPECTIONS_MODULE)
             .build()
         binding.catsCard.setOnClickListener {
-            splitInstallManager.startInstall(catsModuleInstallRequest)
+           splitInstallManager.startInstall(catsModuleInstallRequest)
+                .addOnSuccessListener {
+                    Toast.makeText(
+                        applicationContext,
+                        "Completed successfully",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                .addOnFailureListener {
+                    Toast.makeText(
+                        applicationContext,
+                        "Completed Failed",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
         }
 
-        binding.catsCard.setOnLongClickListener() {
+        binding.dogsCard.setOnLongClickListener() {
             showDialog()
             true
         }
@@ -128,7 +145,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun uninstallModule() {
         CoroutineScope(Dispatchers.IO).launch {
-            splitInstallManager.deferredUninstall(listOf(INSPECTIONS_MODULE)).addOnSuccessListener{
+            splitInstallManager.deferredUninstall(listOf(ISSUES_MODULE)).addOnSuccessListener {
                 Toast.makeText(
                     applicationContext,
                     "Uninstallation Completed successfully",
@@ -146,7 +163,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val ISSUES_MODULE = "issues"
-        private const val INSPECTIONS_MODULE  = "inspections"
+        private const val INSPECTIONS_MODULE = "inspections"
     }
 }
 

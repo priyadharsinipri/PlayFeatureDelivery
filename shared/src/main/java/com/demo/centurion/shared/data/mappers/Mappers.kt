@@ -2,6 +2,7 @@ package com.demo.centurion.shared.data.mappers
 
 import com.demo.centurion.shared.data.models.InspectionResponse
 import com.demo.centurion.shared.data.models.IssueResponse
+import com.demo.centurion.shared.presentation.states.UIIssueModel
 import com.demo.centurion.shared.presentation.states.UIModel
 
 fun catResponseToUIModel(cats: InspectionResponse): List<UIModel> {
@@ -10,9 +11,9 @@ fun catResponseToUIModel(cats: InspectionResponse): List<UIModel> {
     }!!
 }
 
-fun dogResponseToUIModel(dogs: IssueResponse): List<UIModel> {
+fun dogResponseToUIModel(dogs: IssueResponse): List<UIIssueModel> {
     return dogs.issues?.map {
-        UIModel(it.issueId.toString())
+        UIIssueModel(it.issueNumber.toString(), it.description!!)
     }!!
 }
 

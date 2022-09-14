@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Color when the row is selected -->
+     <!-- Standard background color -->
+    <item android:drawable="@drawable/mail_list_un_selected_item" android:state_enabled="false" />
+</selector>

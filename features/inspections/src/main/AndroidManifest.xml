@@ -10,7 +10,7 @@
       <dist:on-demand/>
     </dist:delivery>
     <dist:fusing dist:include="true" />
-    <dist:removable dist:value="true" />
+
   </dist:module>
 
   <application>

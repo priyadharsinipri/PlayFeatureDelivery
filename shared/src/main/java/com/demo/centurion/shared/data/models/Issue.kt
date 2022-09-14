@@ -5,9 +5,10 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Issue(
-    @SerialName("id")
-    var issueId: String? = null,
 
     @SerialName("issueNumber")
-    var issueNumber: String? = null
+    var issueNumber: String? = null,
+
+    @SerialName("description")
+    var description: String? = null
 )

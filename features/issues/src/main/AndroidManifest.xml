@@ -4,12 +4,13 @@
   package="com.demo.centurion.issues">
 
   <dist:module
-    dist:instant="false"
+    dist:instant="true"
     dist:title="@string/title_issues">
     <dist:delivery>
       <dist:install-time />
     </dist:delivery>
     <dist:fusing dist:include="true" />
+    <dist:removable dist:value="true" />
   </dist:module>
 
   <application>

@@ -19,11 +19,11 @@ class IssuesInspectionsAdapter : ListAdapter<UIModel, IssuesInspectionsAdapter.I
     fun bind(uiModel: UIModel) {
       when {
         uiModel.url.contains("https") -> {
-          itemCatsDogsBinding.image.load(uiModel.url)
+         // itemCatsDogsBinding.image.load(uiModel.url)
         }
         else -> {
           Log.d("Cat", "https://cataas.com/cat/${uiModel.url}")
-          itemCatsDogsBinding.image.setImageResource(R.drawable.issue_drawable_image)
+        //  itemCatsDogsBinding.image.setImageResource(R.drawable.issue_drawable_image)
         }
       }
     }

@@ -4,19 +4,20 @@ import android.util.Log
 import com.demo.centurion.shared.data.mappers.dogResponseToUIModel
 import com.demo.centurion.shared.data.network.IssuesAPI
 import com.demo.centurion.shared.data.network.NetworkResult
+import com.demo.centurion.shared.presentation.states.UIIssueModel
 import com.demo.centurion.shared.presentation.states.UIModel
 import com.demo.centurion.shared.utils.Constants
 import java.io.IOException
 
 interface IssuesRepository {
-    suspend fun getIssues(): NetworkResult<List<UIModel>>
+    suspend fun getIssues(): NetworkResult<List<UIIssueModel>>
 }
 
 class IssuesRepositoryImpl(
     private val issuesAPI: IssuesAPI
 ) : IssuesRepository {
 
-    override suspend fun getIssues(): NetworkResult<List<UIModel>> =
+    override suspend fun getIssues(): NetworkResult<List<UIIssueModel>> =
         try {
             val url =
                 Constants.BASE_URL + "/mobile/rest/issues/26851/2801?page_number=1&page_size=30"
