@@ -3,6 +3,7 @@ package com.demo.centurion.playfeaturedelivery
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -86,6 +87,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupModulesDownload() {
+        if (splitInstallManager.installedModules.contains(CATS_MODULE) == false) {
+            binding.catsCard.findViewById<TextView>(R.id.issueTv).text =
+                "Not Installed Inspections Module"
+        } else {
+            binding.catsCard.findViewById<TextView>(R.id.issueTv).text =
+                "Installed Inspections Module"
+        }
 
         val catsModuleInstallRequest = SplitInstallRequest.newBuilder()
             .addModule(CATS_MODULE)
