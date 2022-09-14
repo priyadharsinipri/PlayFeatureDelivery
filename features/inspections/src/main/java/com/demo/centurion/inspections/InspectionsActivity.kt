@@ -1,5 +1,5 @@
 
-package com.demo.centurion.cats
+package com.demo.centurion.inspections
 
 import android.content.Context
 import android.os.Bundle

@@ -1,5 +1,5 @@
 
-package com.demo.centurion.dogs
+package com.demo.centurion.issues
 
 import android.os.Bundle
 import android.view.View

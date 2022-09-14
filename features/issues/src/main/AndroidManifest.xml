@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:dist="http://schemas.android.com/apk/distribution"
-  package="com.demo.centurion.dogs">
+  package="com.demo.centurion.issues">
 
   <dist:module
     dist:instant="false"
@@ -14,7 +14,7 @@
 
   <application>
     <activity
-      android:name=".DogsActivity"
+      android:name="com.demo.centurion.issues.DogsActivity"
       android:label="@string/title_issues"
       android:parentActivityName="com.demo.centurion.playfeaturedelivery.MainActivity"/>
   </application>

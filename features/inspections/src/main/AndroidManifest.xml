@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:dist="http://schemas.android.com/apk/distribution"
-  package="com.demo.centurion.cats">
+  package="com.demo.centurion.inspections">
 
   <dist:module
     dist:instant="false"
@@ -15,7 +15,7 @@
 
   <application>
     <activity
-      android:name="com.demo.centurion.cats.CatsActivity"
+      android:name="com.demo.centurion.inspections.CatsActivity"
       android:label="@string/title_inspection"
       android:parentActivityName="com.demo.centurion.playfeaturedelivery.MainActivity"/>
   </application>
