@@ -9,8 +9,8 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import com.demo.centurion.shared.R
 import com.demo.centurion.shared.databinding.ActivityCatsDogsBinding
-import com.demo.centurion.shared.presentation.adapters.IssuesInspectionsAdapter
-import com.demo.centurion.shared.presentation.states.UIModel
+import com.demo.centurion.shared.presentation.adapters.IssuesAdapter
+import com.demo.centurion.shared.presentation.states.UIIssueModel
 import com.demo.centurion.shared.presentation.states.UIState
 import com.demo.centurion.shared.presentation.viewmodels.CatsDogViewModel
 import kotlinx.coroutines.flow.collect
@@ -19,7 +19,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DogsActivity : AppCompatActivity() {
   private val catsDogViewModel: CatsDogViewModel by viewModel()
-  private val catsDogsAdapter = IssuesInspectionsAdapter()
+  private val catsDogsAdapter = IssuesAdapter()
   private lateinit var binding: ActivityCatsDogsBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +39,7 @@ class DogsActivity : AppCompatActivity() {
           is UIState.ShowData<*> -> {
             binding.animationView.cancelAnimation()
             binding.animationView.visibility = View.GONE
-            populateData(value.data as List<UIModel>)
+            populateData(value.data as List<UIIssueModel>)
           }
           is UIState.Error -> {
             Toast.makeText(applicationContext, value.message, Toast.LENGTH_SHORT).show()
@@ -59,7 +59,7 @@ class DogsActivity : AppCompatActivity() {
     }
   }
 
-  private fun populateData(data: List<UIModel>) {
+  private fun populateData(data: List<UIIssueModel>) {
     catsDogsAdapter.submitList(data)
   }
 }

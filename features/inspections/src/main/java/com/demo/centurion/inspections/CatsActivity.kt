@@ -11,7 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.google.android.play.core.splitcompat.SplitCompat
 import com.demo.centurion.shared.R
 import com.demo.centurion.shared.databinding.ActivityCatsDogsBinding
-import com.demo.centurion.shared.presentation.adapters.IssuesInspectionsAdapter
+import com.demo.centurion.shared.presentation.adapters.InspectionsAdapter
 import com.demo.centurion.shared.presentation.states.UIModel
 import com.demo.centurion.shared.presentation.states.UIState
 import com.demo.centurion.shared.presentation.viewmodels.CatsDogViewModel
@@ -21,7 +21,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CatsActivity : AppCompatActivity() {
   private val catsDogViewModel: CatsDogViewModel by viewModel()
-  private val catsDogsAdapter = IssuesInspectionsAdapter()
+  private val catsDogsAdapter = InspectionsAdapter()
   private lateinit var binding: ActivityCatsDogsBinding
 
   override fun onCreate(savedInstanceState: Bundle?) {
