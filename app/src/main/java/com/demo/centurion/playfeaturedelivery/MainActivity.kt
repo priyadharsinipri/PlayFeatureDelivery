@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val DOGS_MODULE = "dog"
-        private const val CATS_MODULE = "cats"
+        private const val CATS_MODULE  = "cats"
     }
 }
 
