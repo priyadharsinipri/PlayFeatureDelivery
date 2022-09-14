@@ -1,17 +1,18 @@
-
 package com.demo.centurion.shared.data.mappers
 
-import com.demo.centurion.shared.data.models.CatsResponse
+import com.demo.centurion.shared.data.models.InspectionResponse
+import com.demo.centurion.shared.data.models.IssueResponse
 import com.demo.centurion.shared.presentation.states.UIModel
 
-fun catResponseToUIModel(cats: List<CatsResponse>): List<UIModel> {
-  return cats.map {
-    UIModel(it.id)
-  }
+fun catResponseToUIModel(cats: InspectionResponse): List<UIModel> {
+    return cats.checklists?.map {
+        UIModel(it.checklistNumber.toString())
+    }!!
 }
 
-fun dogResponseToUIModel(dogs: List<String>): List<UIModel> {
-  return dogs.map {
-    UIModel(it)
-  }
+fun dogResponseToUIModel(dogs: IssueResponse): List<UIModel> {
+    return dogs.issues?.map {
+        UIModel(it.issueId.toString())
+    }!!
 }
+

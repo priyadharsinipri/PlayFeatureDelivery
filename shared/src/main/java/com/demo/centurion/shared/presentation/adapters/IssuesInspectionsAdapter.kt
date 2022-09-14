@@ -12,9 +12,9 @@ import com.demo.centurion.shared.R
 import com.demo.centurion.shared.databinding.ItemCatsDogsBinding
 import com.demo.centurion.shared.presentation.states.UIModel
 
-class DogsCatsAdapter : ListAdapter<UIModel, DogsCatsAdapter.DogsCatViewHolder>(DogsCatDiffUtil) {
+class IssuesInspectionsAdapter : ListAdapter<UIModel, IssuesInspectionsAdapter.IssuesInspectionsViewHolder>(DogsCatDiffUtil) {
 
-  class DogsCatViewHolder(private val itemCatsDogsBinding: ItemCatsDogsBinding) : RecyclerView.ViewHolder(itemCatsDogsBinding.root) {
+  class IssuesInspectionsViewHolder(private val itemCatsDogsBinding: ItemCatsDogsBinding) : RecyclerView.ViewHolder(itemCatsDogsBinding.root) {
 
     fun bind(uiModel: UIModel) {
       when {
@@ -39,8 +39,8 @@ class DogsCatsAdapter : ListAdapter<UIModel, DogsCatsAdapter.DogsCatViewHolder>(
     }
   }
 
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DogsCatViewHolder =
-      DogsCatViewHolder(
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IssuesInspectionsViewHolder =
+      IssuesInspectionsViewHolder(
           ItemCatsDogsBinding.inflate(
               LayoutInflater.from(parent.context),
               parent,
@@ -48,7 +48,7 @@ class DogsCatsAdapter : ListAdapter<UIModel, DogsCatsAdapter.DogsCatViewHolder>(
           )
       )
 
-  override fun onBindViewHolder(holder: DogsCatViewHolder, position: Int) {
+  override fun onBindViewHolder(holder: IssuesInspectionsViewHolder, position: Int) {
     holder.bind(getItem(position))
   }
 }
