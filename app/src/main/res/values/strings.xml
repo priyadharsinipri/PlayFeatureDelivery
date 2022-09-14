@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">PlayFeatureDelivery</string>
+  <string name="title_issues">Issues</string>
+  <string name="title_inspection">Inspections</string>
+  <string name="text_install_time_issues">Install Time Issues</string>
+  <string name="text_on_demand_inspections">On Demand Inspections</string>
+  <string name="text_downloading_inspections">Wait as your inspections download!</string>
+</resources>
