@@ -9,11 +9,11 @@ data class Inspection(
     var id: String? = "",
 
     @SerialName("number")
-    var checklistNumber: String? = null,
+    var checklistNumber: String,
 
     @SerialName("title")
-    var checklistTitle: String? = null,
+    var checklistTitle: String,
 
-    @SerialName("status")
-    var checklistStatus: String? = null,
+    @SerialName("description")
+    var checklistdescription: String,
 )

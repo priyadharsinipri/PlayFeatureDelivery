@@ -6,6 +6,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class InspectionResponse(
     @SerialName("checklists")
-    var checklists: List<Inspection>? = null,
+    var checklists: List<Inspection> = emptyList()
 
 )

@@ -59,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Issue Number:"
+                    android:text="Number:"
                     android:textSize="16sp"
                     />
                 <TextView
@@ -83,7 +83,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:text="Issue Description:"
+                    android:text="Description:"
                     android:textSize="16sp"
                     />
                 <TextView

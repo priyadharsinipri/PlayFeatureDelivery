@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent()
                 intent.setClassName(
                     BuildConfig.APPLICATION_ID,
-                    "com.demo.centurion.inspections.CatsActivity"
+                    "com.demo.centurion.issues.DogsActivity"
                 )
                 startActivity(intent)
             }
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent()
             intent.setClassName(
                 BuildConfig.APPLICATION_ID,
-                "com.demo.centurion.issues.DogsActivity"
+                "com.demo.centurion.inspections.CatsActivity"
             )
             startActivity(intent)
         }
@@ -93,18 +93,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupModulesDownload() {
         if (splitInstallManager.installedModules.contains(ISSUES_MODULE) == false) {
-            binding.dogsCard.findViewById<TextView>(R.id.title).text =
+            binding.catsCard.findViewById<TextView>(R.id.issueTv).text =
                 "Uninstalled Issues Module"
         } else {
-            binding.dogsCard.findViewById<TextView>(R.id.title).text =
+            binding.catsCard.findViewById<TextView>(R.id.issueTv).text =
                 "Installed Issues Module"
         }
 
-        val catsModuleInstallRequest = SplitInstallRequest.newBuilder()
-            .addModule(INSPECTIONS_MODULE)
+        val issueModuleInstallRequest = SplitInstallRequest.newBuilder()
+            .addModule(ISSUES_MODULE)
             .build()
         binding.catsCard.setOnClickListener {
-           splitInstallManager.startInstall(catsModuleInstallRequest)
+           splitInstallManager.startInstall(issueModuleInstallRequest)
                 .addOnSuccessListener {
                     Toast.makeText(
                         applicationContext,
@@ -121,7 +121,7 @@ class MainActivity : AppCompatActivity() {
                 }
         }
 
-        binding.dogsCard.setOnLongClickListener() {
+        binding.catsCard.setOnLongClickListener() {
             showDialog()
             true
         }
@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showDialog() {
         var builder = AlertDialog.Builder(this)
-        builder.setTitle("Uninstall the module").setCancelable(false).setPositiveButton(
+        builder.setTitle("Uninstalling the module").setCancelable(false).setPositiveButton(
             "Uninstall"
         ) { dialog, id ->
             deleteModule()

@@ -46,7 +46,6 @@ val dogsRetrofitModule: Module = module {
 }
 
 val catsRetrofitModule: Module = module {
-
     single(named("cats")) {
         Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)

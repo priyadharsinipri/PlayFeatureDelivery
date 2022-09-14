@@ -16,9 +16,9 @@ interface InspectionsAPI {
         "application-type:ANDROID PHONE",
         "Accept-Language:en_US",
         "key-state:VALID",
-        "x-type-mdm:ENABLE"
+        "x-type-mdm:ENABLE",
+        "client-version: 22.6.0",
+        "Content-Type:application/json"
     )
-    suspend fun getInspections(
-        @Url url: String
-    ): Response<InspectionResponse>
+    suspend fun getInspections(@Url url: String): Response<InspectionResponse>
 }

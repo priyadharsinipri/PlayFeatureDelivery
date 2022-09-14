@@ -7,6 +7,4 @@ import kotlinx.serialization.Serializable
 data class IssueResponse(
     @SerialName("issues")
     var issues: List<Issue>? = emptyList(),
-
-
 )

@@ -7,7 +7,7 @@ import com.demo.centurion.shared.presentation.states.UIModel
 
 fun catResponseToUIModel(cats: InspectionResponse): List<UIModel> {
     return cats.checklists?.map {
-        UIModel(it.checklistNumber.toString())
+        UIModel(it.id, it.checklistTitle)
     }!!
 }
 
