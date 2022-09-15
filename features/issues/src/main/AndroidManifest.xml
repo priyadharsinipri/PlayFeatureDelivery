@@ -7,7 +7,7 @@
     dist:instant="true"
     dist:title="@string/title_issues">
     <dist:delivery>
-      <dist:install-time />
+      <dist:on-demand />
     </dist:delivery>
     <dist:fusing dist:include="true" />
     <dist:removable dist:value="true" />

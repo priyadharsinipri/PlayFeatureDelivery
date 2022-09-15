@@ -8,8 +8,8 @@ android {
     applicationId "com.demo.centurion.playfeaturedelivery"
     minSdkVersion rootProject.ext.minSdkVersion
     targetSdkVersion rootProject.ext.targetSdkVersion
-    versionCode 1008
-    versionName "1.8"
+    versionCode 1009
+    versionName "1.9"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
   }
 
